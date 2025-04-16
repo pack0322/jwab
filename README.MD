@@ -7,3 +7,5 @@ This project is a starting point for a Web application.
 ## 3주차 수업 부트스트랩 적용 완료! (문제 제외)
 ## 4주차 수업 메인화면 개발 완료!
 ## 5주차 수업 완료 
+## 6주차 수업 완료 
+## 7주차 수업 완료
