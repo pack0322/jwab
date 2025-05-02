@@ -26,10 +26,10 @@ function show_clock(){
 }
 
 function over(obj) { //호버기능
-    obj.src="image/logo2.png";
+    obj.src="image/l2.svg";
 }
 function out(obj) {
-obj.src="image/logo3.png";
+obj.src="image/l.svg";
 }
 
 function pop_up() {
