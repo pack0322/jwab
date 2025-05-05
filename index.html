@@ -33,58 +33,82 @@
                 </a>                
                 게임정보    기본정보   챔피언   패치 노트   새소식   다운로드 (메뉴 작성) 
             </h3> -->
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Navbar</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/index.html">홈페이지</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">게임소개</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">다운로드</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">게시판</a>
-                      </li>
-                      <li class="nav-item">
-                      <a class="nav-link" href="#">외부링크</a>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          드랍다운메뉴
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                      </li>
-                    </ul>
-                    <form class="d-flex" role="search" onsubmit="return googleSearch();">
-                      <input class="form-control me-2" id="search_input" name="q" type="search" placeholder="키워드 입력" aria-label="Search">
-                      <button class="btn btn-outline-success" id="search_btn" type="submit">검색하기</button>
-                    </form>
-                  </div>
-                  <a href="login/login.html" class="btn btn-outline-success" id="login_btn">로그인 하기</a>
+            <nav class="navbar navbar-expand-lg" style="background-color: black;">
+              <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">Navbar</a>
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link text-white" aria-current="page" href="http://127.0.0.1:5500/index.html">홈페이지</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="#">게임소개</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="#">다운로드</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="#">게시판</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="#">외부링크</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        드랍다운메뉴
+                      </a>
+                      <ul class="dropdown-menu bg-dark">
+                        <li><a class="dropdown-item text-white" href="#">Action</a></li>
+                        <li><a class="dropdown-item text-white" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-secondary" aria-disabled="true">Disabled</a>
+                    </li>
+                  </ul>
+                  <form class="d-flex" role="search" onsubmit="return googleSearch();">
+                    <input class="form-control me-2" id="search_input" name="q" type="search" placeholder="키워드 입력" aria-label="Search">
+                    <button class="btn btn-outline-light" id="search_btn" type="submit">검색하기</button>
+                  </form>
+                  <a href="login/login.html" class="btn btn-outline-light ms-2" id="login_btn">로그인 하기</a>
                 </div>
-              </nav>
+              </div>
+            </nav>
+            <style>
+              /* 일반 메뉴 항목 호버 효과 */
+              .nav-link:hover {
+                color: #ddd !important;
+                text-decoration: underline;
+              }
+            
+              /* 드롭다운 메뉴 항목 호버 효과 */
+              .dropdown-item:hover {
+                background-color: #222;
+                color: #fff !important;
+              }
+            
+              /* 검색 버튼 호버 효과 */
+              #search_btn:hover,
+              #login_btn:hover {
+                background-color: white;
+                color: black;
+              }
+            </style>
+            
         </div>
         <hr>
         <div class ="container-fluid" style="display: flex; justify-content: center;">
             <a href="index.html" target="_self">
                 <img src="image/lol.mp4" class="img-fluid" width="1200" height="768">
             </a>
+            
         </div>
 
         <style>
@@ -95,29 +119,43 @@
             }
         </style>
         <div style="display: flex; justify-content: center;">
-            <table class = "table caption-top" border="5">
-                <caption>인기 캐릭터</caption>
-                <tbody class>
-                    <tr bgcolor="red">
-                        <td width="80" rowspan="2">사이온</td>
-                        <td>아리</td>
-                        <td>가렌</td>
-                        <td>가렌2</td>
-                    </tr>
-                    <tr bgcolor="grey">
-                        <td colspan="3">
-                        <a href="https://www.leagueoflegends.com/ko-kr/how-to-play/">를 웹사이트 접속하기</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td bgcolor="blue"><b>카직스</b></td>
-                        <td>루시안</td>
-                        <td>루시안2</td>
-                        <td><img src="image/char.png" width="60" height="60"><colspan="2"><font size="13">바이1, 2</font></td>      
-                    </tr>
-                </tbody>
-            </table>
+          <table class="table caption-top table-bordered" style="width: 80%; margin-top: 20px;">
+              <caption>인기 캐릭터</caption>
+              <thead>
+                  <tr style="background-color: #dcdcdc;"> <!-- 1행 배경 색 회색으로 설정 -->
+                      <th scope="col" rowspan="2" style="background-color: #dcdcdc;">캐릭터</th> <!-- 1열 배경 색 회색으로 설정 -->
+                      <th scope="col" style="background-color: #dcdcdc;">아리</th>
+                      <th scope="col" style="background-color: #dcdcdc;">가렌</th>
+                      <th scope="col" style="background-color: #dcdcdc;">가렌2</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td style="background-color: #dcdcdc;"><b>사이온</b></td> <!-- 1열 배경 색 회색으로 설정 -->
+                      <td>아리</td>
+                      <td>가렌</td>
+                      <td>가렌2</td>
+                  </tr>
+                  <tr>
+                      <td style="background-color: #dcdcdc;"><b>카직스</b></td> <!-- 1열 배경 색 회색으로 설정 -->
+                      <td>루시안</td>
+                      <td>루시안2</td>
+                      <td>
+                          <img src="image/char.png" width="60" height="60" style="border-radius: 50%;">
+                          <span style="font-size: 13px;">바이1, 2</span>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td colspan="4" style="text-align: center;">
+                        <a href="https://www.leagueoflegends.com/ko-kr/how-to-play/" style="color: #0c5460;">웹사이트 접속하기</a>
+                    </td>
+                </tr>
+              </tbody>
+          </table>
         </div>
+
+
+    
         <hr>
         <div class ="container-fluid" style="display: flex; justify-content: center;">
             <h3 style = "font-size: 24px; font-weight: bold; font-style: italic; color: white; font-family: '굴림';">
