@@ -1,7 +1,3 @@
-function pop_up() {
-        window.open("../popup/popup.html", "팝업테스트", "width=400, height=300, top=10, left=10");
-    }
-
 function show_clock(){
     let currentDate = new Date(); // 현재 시스템 날짜 객체 생성
     let divClock = document.getElementById('divClock');
