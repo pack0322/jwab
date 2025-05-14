@@ -19,6 +19,7 @@ function getCookie(name) {
     }
     return;
 }
+
 function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
     const emailInput = document.getElementById('typeEmailX');
     const idsave_check = document.getElementById('idSaveCheck');
@@ -30,6 +31,18 @@ function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
     }
     session_check(); // 로그인 세션 유무 검사
 }
+
+
+function init_logined(){
+    if(sessionStorage){
+    decrypt_text(); //복호화 함수
+    }
+    else{
+        alert("세션 스토리지 지원 x");
+    }
+}
+
+
 
 const check_xss = (input) => {
     // DOMPurify 라이브러리 로드 (CDN 사용)
@@ -51,6 +64,7 @@ const check_xss = (input) => {
 const check_input = () => {
     // 전역 변수 추가, 맨 위 위치
     const idsave_check = document.getElementById('idSaveCheck');
+    
     const loginForm = document.getElementById('login_form');
     const loginBtn = document.getElementById('login_btn');
     const emailInput = document.getElementById('typeEmailX');
@@ -61,6 +75,17 @@ const check_input = () => {
 
     const emailValue = emailInput.value.trim();
     const passwordValue = passwordInput.value.trim();
+
+    const payload = {
+        id: emailValue,
+        exp: Math.floor(Date.now() / 1000) + 3600 // 1시간 (3600초)
+    };
+    const jwtToken = generateJWT(payload);
+    
+    const sanitizedPassword = check_xss(passwordValue);
+    // check_xss 함수로 비밀번호 const Sanitize
+    sanitizedEmail = check_xss(emailValue);
+    // check_xss 함수로 비밀번호 Sanitize
 
     if (emailValue.length < 5) {
         alert('아이디는 최소 5글자 이상 입력해야 합니다.');
@@ -85,8 +110,6 @@ const check_input = () => {
         return false;
     }
 
-    console.log('이메일:', emailValue);
-    console.log('비밀번호:', passwordValue);
 
     if(idsave_check.checked == true) { // 아이디 체크 o
         alert("쿠키를 저장합니다.", emailValue);
@@ -96,13 +119,6 @@ const check_input = () => {
     else { // 아이디 체크 x
         setCookie("id", emailValue.value, 0); //날짜를 0 - 쿠키 삭제
     }
-    session_set(); // 세션 생성
-    loginForm.submit();
-
-    const sanitizedPassword = check_xss(passwordInput);
-    // check_xss 함수로 비밀번호 const Sanitize
-    sanitizedEmail = check_xss(emailInput);
-    // check_xss 함수로 비밀번호 Sanitize
 
     if (!sanitizedEmail) {
     // Sanitize된 비밀번호 사용
@@ -113,7 +129,18 @@ const check_input = () => {
     // Sanitize된 비밀번호 사용
         return false;
     }
+
+    console.log('이메일:', emailValue);
+    console.log('비밀번호:', passwordValue);
+
+    session_set(); // 세션 생성
+    localStorage.setItem('jwt_token', jwtToken);
+    loginForm.submit();
+
 };
+
+
+
 
 function session_del() {//세션 삭제
     if (sessionStorage) {
@@ -128,6 +155,5 @@ function logout(){
     session_del(); // 세션 삭제
     location.href = '../index.html';
 }
-
 
 document.getElementById("login_btn").addEventListener('click', check_input);
