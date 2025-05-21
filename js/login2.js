@@ -2,6 +2,11 @@ import { session_set, session_get, session_check } from './session.js';
 import { encrypt_text, decrypt_text } from './crypto.js';
 import { generateJWT, checkAuth } from './jwt_token.js';
 
+document.addEventListener('DOMContentLoaded', () => {
+    checkAuth();
+    init_logined();
+});
+
 function setCookie(name, value, expiredays) {
     var date = new Date();
     date.setDate(date.getDate() + expiredays);
@@ -92,7 +97,7 @@ const check_input = () => {
     
     const sanitizedPassword = check_xss(passwordValue);
     // check_xss 함수로 비밀번호 const Sanitize
-    const sanitizedEmail = check_xss(emailValue);
+    sanitizedEmail = check_xss(emailValue);
     // check_xss 함수로 비밀번호 Sanitize
 
     if (emailValue.length < 5) {
