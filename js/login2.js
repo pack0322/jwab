@@ -1,6 +1,6 @@
-import { session_set, session_get, session_check } from './session.js';
-import { encrypt_text, decrypt_text } from './crypto.js';
-import { generateJWT, checkAuth } from './jwt_token.js';
+import { session_set, session_get, session_check } from '/jwab/session.js';
+import { encrypt_text, decrypt_text } from '/jwab/crypto.js';
+import { generateJWT, checkAuth } from '/jwab/jwt_token.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     checkAuth();
@@ -61,20 +61,20 @@ function session_del() {//세션 삭제
 }
 
 function logout() {
-    // ✅ JWT 토큰 삭제
+    // JWT 토큰 삭제
     localStorage.removeItem('jwt_token');
 
-    // ✅ 세션 삭제
+    // 세션 삭제
     session_del();
 
-    // ✅ 로그인 관련 쿠키 삭제 (선택 사항)
+    // 로그인 관련 쿠키 삭제 (선택 사항)
     setCookie("id", "", -1);
     setCookie("fail_cnt", "", -1);
     setCookie("login_block", "", -1);
     setCookie("login_cnt", "", -1);
     setCookie("logout_cnt", "", -1);
 
-    // ✅ 리디렉션
+    // 리디렉션
     location.href = '../index.html';
 }
 

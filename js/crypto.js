@@ -1,4 +1,4 @@
-import { session_set, session_get, session_check } from './session.js';
+import { session_set, session_get, session_check } from '/jwab/session.js';
 
 function encodeByAES256(key, data){ //
     const cipher = CryptoJS.AES.encrypt(data, CryptoJS.enc.Utf8.parse(key), {

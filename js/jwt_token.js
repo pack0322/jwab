@@ -52,6 +52,6 @@ export function checkAuth() { // 인증 검사 수행
         alert('정상적으로 토큰이 검증되었습니다.');
     } else {
         alert('토큰 검증 에러!! 인증되지 않은 접근입니다.');
-        window.location.href = '../login/login.html'; // 로그인 페이지 이동
+        window.location.href = '/jwab/login/login.html'; // 로그인 페이지 이동
     }
 }

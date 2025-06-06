@@ -22,16 +22,16 @@ function show_clock(){
 }
 
 function over(obj) { //호버기능
-    obj.src="./image/l2.svg";
+    obj.src="/jwab/image/l2.svg";
 }
 function out(obj) {
-obj.src="./image/l.svg";
+obj.src="/jwab/image/l.svg";
 }
 
 function pop_up() {
     var cookieCheck = getCookie("popupYN");
     if (cookieCheck != "N"){
-    window.open("../popup/popup.html", "팝업테스트", "width=400, height=300, top=10, left=10");
+    window.open("/jwab/popup/popup.html", "팝업테스트", "width=400, height=300, top=10, left=10");
     }
 }
 

@@ -1,7 +1,7 @@
-import { session_set, session_get, session_check } from './session.js';
-import { encrypt_text, decrypt_text } from './crypto.js';
-import { generateJWT, checkAuth } from './jwt_token.js';
-import { encryptAES } from './crypto2.js';
+import { session_set, session_get, session_check } from '/jwab/session.js';
+import { encrypt_text, decrypt_text } from '/jwab/crypto.js';
+import { generateJWT, checkAuth } from '/jwab/jwt_token.js';
+import { encryptAES } from '/jwab/crypto2.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     init();
@@ -117,7 +117,7 @@ const check_input = async () => {
     const emailInput = document.getElementById('typeEmailX');
     const passwordInput = document.getElementById('typePasswordX');
 
-    // ✅ 로그인 차단 여부 먼저 확인
+    // 로그인 차단 여부 먼저 확인
     if (is_login_blocked()) {
         alert("로그인 가능 횟수를 초과했습니다. 잠시 후 다시 시도해주세요.");
         return false;
@@ -204,7 +204,7 @@ const check_input = async () => {
         setCookie("id", emailValue.value, 0);
     }
 
-    // ✅ 로그인 성공 시 실패 쿠키 제거
+    //  로그인 성공 시 실패 쿠키 제거
     setCookie("fail_cnt", 0, -1);
     setCookie("login_block", "", -1);
 
