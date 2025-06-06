@@ -24,9 +24,9 @@ export function session_set(){ //세션 저장(객체)
 
 export function session_set2(obj){ //세션 저장(객체)
     if (sessionStorage) {
-        const objString = JSON.stringify(obj); // 객체-> JSON 문자열 변환
-        //let en_text = encrypt_text(objString); // 암호화
-        sessionStorage.setItem("Session_Storage_join", objString);
+        const objString = JSON.stringify(obj.getUserInfo());  // ✅ getUserInfo() 호출
+        const encrypted = encrypt_text(objString);            // 🔐 암호화
+        sessionStorage.setItem("Session_Storage_join", encrypted);
         } else {
         alert("세션 스토리지 지원 x");
     }
@@ -46,3 +46,4 @@ export function session_check() { //세션 검사
         location.href='../login/index_login.html'; // 로그인된 페이지로 이동
     }
 }
+

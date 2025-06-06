@@ -51,6 +51,32 @@ function init_logined(){
     }
 }
 
+function session_del() {//세션 삭제
+    if (sessionStorage) {
+    sessionStorage.removeItem("Session_Storage_test");
+    alert('로그아웃 버튼 클릭 확인 : 세션 스토리지를 삭제합니다.');
+    } else {
+    alert("세션 스토리지 지원 x");
+    }
+}
+
+function logout() {
+    // ✅ JWT 토큰 삭제
+    localStorage.removeItem('jwt_token');
+
+    // ✅ 세션 삭제
+    session_del();
+
+    // ✅ 로그인 관련 쿠키 삭제 (선택 사항)
+    setCookie("id", "", -1);
+    setCookie("fail_cnt", "", -1);
+    setCookie("login_block", "", -1);
+    setCookie("login_cnt", "", -1);
+    setCookie("logout_cnt", "", -1);
+
+    // ✅ 리디렉션
+    location.href = '../index.html';
+}
 
 
 const check_xss = (input) => {
@@ -142,27 +168,13 @@ const check_input = () => {
     console.log('이메일:', emailValue);
     console.log('비밀번호:', passwordValue);
 
+    const encryptedPassword = encrypt_text(passwordValue);
+    sessionStorage.setItem("Session_Storage_pass2", encryptedPassword);
+
     session_set(); // 세션 생성
     localStorage.setItem('jwt_token', jwtToken);
     loginForm.submit();
 
 };
-
-
-
-
-function session_del() {//세션 삭제
-    if (sessionStorage) {
-    sessionStorage.removeItem("Session_Storage_test");
-    alert('로그아웃 버튼 클릭 확인 : 세션 스토리지를 삭제합니다.');
-    } else {
-    alert("세션 스토리지 지원 x");
-    }
-}
-// login.js의 마지막 부분에 추가
-function logout(){
-    session_del(); // 세션 삭제
-    location.href = '../index.html';
-}
 
 document.getElementById("login_btn").addEventListener('click', check_input);

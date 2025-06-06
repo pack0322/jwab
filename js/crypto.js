@@ -19,18 +19,34 @@ function decodeByAES256(key, data){
 }
 
 export function encrypt_text(password){
-    const k = "key"; // 클라이언트 키
+    const k = "key";
     const rk = k.padEnd(32, " ");
-    const b = password;
-    const eb = encodeByAES256(rk,b);
+    const eb = encodeByAES256(rk, password);
+    console.log("암호화된 값:", eb); // 이 위치로 옮기기
     return eb;
-    console.log(eb);
 }
+// export function decrypt_text(){
+//     const k = "key"; // 서버의 키
+//     const rk = k.padEnd(32, " ");  
+//     const eb = session_get();
+//     const b = decodeByAES256(rk, eb);
+//     console.log(b);
+// }
 
 export function decrypt_text(){
     const k = "key"; // 서버의 키
-    const rk = k.padEnd(32, " ");
+    const rk = k.padEnd(32, " ");  
     const eb = session_get();
-    const b = decodeByAES256(rk, eb);
-    console.log(b);
+
+    if (!eb) {
+        console.warn("sessionStorage에서 암호화된 값이 없음.");
+        return;
+    }
+
+    try {
+        const b = decodeByAES256(rk, eb);
+        console.log("복호화된 값:", b);
+    } catch (e) {
+        console.error("복호화 중 오류 발생:", e.message);
+    }
 }

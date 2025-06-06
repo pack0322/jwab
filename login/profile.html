@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -88,9 +86,9 @@
                 <div class="col">
                   <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4">
                     <ol class="breadcrumb mb-0">
-                      <li class="breadcrumb-item"><a href="#">Home</a></li>
-                      <li class="breadcrumb-item"><a href="#">User</a></li>
-                      <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                      <li class="breadcrumb-item"><a href="#">집</a></li>
+                      <li class="breadcrumb-item"><a href="#">사용자</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">사용자 프로필</li>
                     </ol>
                   </nav>
                 </div>
@@ -104,10 +102,10 @@
                         class="rounded-circle img-fluid" style="width: 150px;">
                       <h5 class="my-3">홍길동</h5>
                       <p class="text-muted mb-1">풀 스택 개발자</p>
-                      <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+                      <p class="text-muted mb-4">센 프란시스코</p>
                       <div class="d-flex justify-content-center mb-2">
-                        <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary">Follow</button>
-                        <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary ms-1">Message</button>
+                        <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary">팔로우</button>
+                        <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary ms-1">메세지</button>
                       </div>
                     </div>
                   </div>
@@ -170,7 +168,7 @@
                       <hr>
                       <div class="row">
                         <div class="col-sm-3">
-                          <p class="mb-0">Mobile</p>
+                          <p class="mb-0">번호</p>
                         </div>
                         <div class="col-sm-9">
                           <p class="text-muted mb-0">(098) 765-4321</p>
@@ -182,7 +180,7 @@
                           <p class="mb-0"></p>
                         </div>
                         <div class="col-sm-9">
-                          <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+                          <p class="text-muted mb-0">센 프란시스코</p>
                         </div>
                       </div>
                     </div>
@@ -256,8 +254,11 @@
                       <br>
                     </div>
                     <div class="map_wrap">
-                        <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
-                    
+                      <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+                      <div class="hAddr">
+                          <span class="title">지도중심기준 행정동 주소정보</span>
+                          <span id="centerAddr"></span>
+                      </div>
                         <div id="menu_wrap" class="bg_white">
                             <div class="option">
                                 <div>
@@ -271,7 +272,6 @@
                             <ul id="placesList"></ul>
                             <div id="pagination"></div>
                         </div>
-
                     </div>
                     <!-- <div id="map" style="width:1000px;height:400px;"></div> -->
                     <p><em>지도를 클릭해주세요!</em></p>

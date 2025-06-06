@@ -1,5 +1,6 @@
 import { session_set2 } from './session.js';
 
+
 function join(){ // 회원가입 기능
     let form = document.querySelector("#join_form"); // 로그인 폼 식별자
     let name = document.querySelector("#form3Example1c");

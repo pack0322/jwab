@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,6 +29,15 @@
     <body style="background-color: black;">
         <div class ="container-fluid" style="display: flex; justify-content: center;">
             <img src="image/l.svg" width="200" height="60" onmouseover="over(this)" onmouseout="out(this)">
+            <script>
+              function over(el) {
+                  el.style.filter = "hue-rotate(90deg)";
+              }
+      
+              function out(el) {
+                  el.style.filter = "none";
+              }
+            </script>
             <!-- <h3 style = "font-size: 24px; font-weight: bold; font-style: italic; color: white; font-family: '굴림';">
                 <a href="https://www.leagueoflegends.com/ko-kr/how-to-play/" target="_blank" style="color: white; text-decoration: none;">
                     게임정보
@@ -60,7 +67,7 @@
                       <a class="nav-link text-white" href="#">게시판</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="../login/profile.html" target="_blank">기본정보(프로필)</a>
+                      <a class="nav-link text-white" href="../login/profile.html" target="_blank">기본정보(프로필)</a>
                     </li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -81,11 +88,12 @@
                     <input class="form-control me-2" id="search_input" name="q" type="search" placeholder="키워드 입력" aria-label="Search">
                     <button class="btn btn-outline-light" id="search_btn" type="submit">검색하기</button>
                   </form>
-                  <a href="login/login.html" class="btn btn-outline-light ms-2" id="login_btn">로그아웃</a>
+                  <a href="login/logout.html" class="btn btn-outline-light ms-2" id="login_btn">로그아웃</a>
                 </div>
               </div>
             </nav>
 
+          
             
 
             <style>
@@ -170,5 +178,8 @@
             </h3>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </body>
+        
+        
+      
+      </body>
 </html>
