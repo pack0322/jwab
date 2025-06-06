@@ -1,7 +1,7 @@
-import { session_set, session_get, session_check } from '/jwab/session.js';
-import { encrypt_text, decrypt_text } from '/jwab/crypto.js';
-import { generateJWT, checkAuth } from '/jwab/jwt_token.js';
-import { encryptAES } from '/jwab/crypto2.js';
+import { session_set, session_get, session_check } from '/jwab/js/session.js';
+import { encrypt_text, decrypt_text } from '/jwab/js/crypto.js';
+import { generateJWT, checkAuth } from '/jwab/js/jwt_token.js';
+import { encryptAES } from '/jwab/js/crypto2.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     init();
