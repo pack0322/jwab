@@ -1,4 +1,4 @@
-import { encrypt_text, decrypt_text } from '/jwab/crypto.js';
+import { encrypt_text, decrypt_text } from '/jwab/js/crypto.js';
 
 
 export function session_set(){ //세션 저장(객체)
@@ -43,7 +43,7 @@ export function session_get() { //세션 읽기
 export function session_check() { //세션 검사
         if (sessionStorage.getItem("Session_Storage_id")) {
         alert("이미 로그인 되었습니다.");
-        location.href='../login/index_login.html'; // 로그인된 페이지로 이동
+        location.href='login/index_login.html'; // 로그인된 페이지로 이동
     }
 }
 
