@@ -1,4 +1,4 @@
-import { session_set2 } from '/jwab/session.js';
+import { session_set2 } from '/jwab/js/session.js';
 
 
 function join(){ // 회원가입 기능
