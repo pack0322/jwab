@@ -84,6 +84,16 @@ function searchAddrFromCoords(coords, callback) {
     geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);         
 }
 
+function displayCenterInfo(result, status) {
+    if (status === kakao.maps.services.Status.OK) {
+        var infoDiv = document.getElementById('centerAddr');
+        if (infoDiv) {
+            infoDiv.innerHTML = result[0].address_name;
+        }
+    }
+}
+
+
 function searchDetailAddrFromCoords(coords, callback) {
     // 좌표로 법정동 상세 주소 정보를 요청합니다
     geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
